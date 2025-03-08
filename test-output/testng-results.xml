@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-02-16T20:02:39 IST" name="Default suite" finished-at="2025-02-16T20:08:04 IST" duration-ms="324975">
+    <groups>
+    </groups>
+    <test started-at="2025-02-16T20:02:39 IST" name="Default test" finished-at="2025-02-16T20:08:04 IST" duration-ms="324975">
+      <class name="company.tests.TC_ID_03_Post_A_Job">
+        <test-method signature="TC_ID_03_01()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:02:39 IST" name="TC_ID_03_01" finished-at="2025-02-16T20:02:54 IST" duration-ms="14783" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_01 -->
+        <test-method signature="TC_ID_03_02()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:02:54 IST" name="TC_ID_03_02" finished-at="2025-02-16T20:02:57 IST" duration-ms="3087" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_02 -->
+        <test-method signature="TC_ID_03_03()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:02:57 IST" name="TC_ID_03_03" finished-at="2025-02-16T20:02:59 IST" duration-ms="1987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_03 -->
+        <test-method signature="TC_ID_03_04()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:02:59 IST" name="TC_ID_03_04" finished-at="2025-02-16T20:04:44 IST" duration-ms="104781" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_04 -->
+        <test-method signature="TC_ID_03_05()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:04:44 IST" name="TC_ID_03_05" finished-at="2025-02-16T20:05:37 IST" duration-ms="53075" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_05 -->
+        <test-method signature="TC_ID_03_06()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:05:37 IST" name="TC_ID_03_06" finished-at="2025-02-16T20:06:25 IST" duration-ms="47598" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_06 -->
+        <test-method signature="TC_ID_03_07()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:06:25 IST" name="TC_ID_03_07" finished-at="2025-02-16T20:07:12 IST" duration-ms="47366" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_07 -->
+        <test-method signature="TC_ID_03_08()[pri:0, instance:company.tests.TC_ID_03_Post_A_Job@23348b5d]" started-at="2025-02-16T20:07:12 IST" name="TC_ID_03_08" finished-at="2025-02-16T20:08:04 IST" duration-ms="52088" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_ID_03_08 -->
+      </class> <!-- company.tests.TC_ID_03_Post_A_Job -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

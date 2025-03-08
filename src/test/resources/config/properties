@@ -1,0 +1,24 @@
+# Application URL
+
+app.url=https://jobs.reyan.co.in/session/login/company
+registrationUrl=https://jobs.reyan.co.in/session/signup/company
+
+configFilePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\Automation_Testing\\Testing\\Company_Portal_JP\\src\\test\\resources\\config\\properties
+
+chromedriver.path=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\chromedriver.exe
+
+filePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\Testing\\Company_Portal_JP\\src\\test\\resources\\tests\\TestData.xlsx
+sheetName=RegisterCompany
+
+# Browser type
+browser=chrome
+
+# Timeout settings
+implicitWait=10
+explicitWait=15
+
+# Credentials
+username=testtoyatacarsltd@outlook.com
+password=Password@12345
+
+PageName="Post a Job"
