@@ -1,0 +1,72 @@
+# Application URL
+
+app.url=https://test-jobs.reyan.co.in/session/login/company
+registrationUrl=http://test-jobs.reyan.co.in/session/login/company
+app.url.admin=https://test-jobs.reyan.co.in/session/login/admin
+
+
+
+configFilePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\Automation_Testing\\Testing\\Company_Portal_JP\\src\\test\\resources\\config\\properties
+
+chromedriver.path=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\chromedriver.exe
+CandidateLoginUrl=https://test-jobs.reyan.co.in/session/login/candidate
+
+
+
+filePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\Testing\\Company_Portal_JP\\src\\test\\resources\\tests\\TestData.xlsx
+sheetName=RegisterCompany
+sheetName_4=Job_Listing
+sheetName_5=Applied_Candidate
+sheetName_6=Admin_Add_Company
+sheetName_7=Admin_Company_List
+sheetName_8=Admin_Post_a_Job
+sheetName_9=Admin_Job_Listing
+
+# Browser type
+browser=chrome
+
+# Timeout settings
+implicitWait=10
+explicitWait=15
+
+ProfilePicfilePath=C:\\Users\\RohitFulzele\\Downloads\\bclays.png
+CoverPicfilePath=C:\\Users\\RohitFulzele\\Downloads\\Barc cover photo.png
+# Credentials
+username=yocobik731@easipro.com
+password=Password@12
+
+username_Candidate=mud-mood@ab4iptpl.mailosaur.net
+password_Candidate=Password@1234
+
+
+username_Admin=hr@reyan.co.in
+password_Admin=Password@1234
+
+PageName="Post a Job"
+
+Foundation_Date_Company_1=12/05/2010
+Foundation_Date_Company_2=15/06/2000
+Foundation_Date_Company_3=12/09/2019
+Foundation_Date_Company_4=20/09/1998
+Foundation_Date_Company_5=15/03/1989
+
+
+
+
+#Admin post a job
+
+Start_Date_1=17/04/2025
+End_Date_1=17/05/2025
+Start_Date_2=15/04/2025
+End_Date_2=15/05/2025
+Start_Date_3=30/04/2025
+End_Date_3=30/05/2025
+Start_Date_4=01/05/2025
+End_Date_4=01/06/2025
+Start_Date_5=10/05/2025
+End_Date_5=10/06/2025
+
+
+End_Date_Update_1=17052025
+
+
