@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import java.util.Iterator;
 import java.util.Set;
@@ -80,7 +82,11 @@ public class Profile {
 	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[1]/div[1]/div[2]/button") WebElement  Upload_Logo;
 
 	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[1]/div[1]/div[1]/button") WebElement  View_button_upload_Logo;
+	 
+	 @FindBy(xpath="//input[@name='jp_logo']") WebElement fileInput_Profile;
 
+	 @FindBy(xpath="//input[@name='jp_cover_photo']") WebElement fileInput_Cover_photo;
+	 
 	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[1]/div[2]/div[2]/button") WebElement  Upload_Cover_Photo;
 
 	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[1]/div[2]/div[1]/button") WebElement View_button_Upload_Cover_Photo;
@@ -89,11 +95,11 @@ public class Profile {
 	 
 	 @FindBy(xpath="//input[@name='jp_cin']") WebElement CIN_No;
 	 
-	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[3]/div[1]/div/div/div/input") WebElement Country;
+	 @FindBy(xpath="//input[@name='jp_country']") WebElement Country;
 	 
-	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[3]/div[2]/div/div/div/input") WebElement State;
+	 @FindBy(xpath="//input[@name='jp_state']") WebElement State;
 	 
-	 @FindBy(xpath="/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[3]/div/form/div[3]/div[3]/div/div/div/input") WebElement City;
+	 @FindBy(xpath="//input[contains(@class, 'MuiAutocomplete-input')]") WebElement City;
 	 
 	 @FindBy(xpath="//input[@name='jp_website']") WebElement Website_link;
 
@@ -408,6 +414,21 @@ public class Profile {
               driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         	  
           }
+          
+          public void Upload_Profile(String ProfilePicfilePath) throws InterruptedException {
+              
+        	  fileInput_Profile.sendKeys(ProfilePicfilePath);                         
+              driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                        
+               }
+          
+      public void Upload_CoverPhoto(String CoverPicfilePath) throws InterruptedException {
+              
+    	  fileInput_Cover_photo.sendKeys(CoverPicfilePath);
+                         
+          driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                        
+               }
 
          public void Check_Email_Address() throws InterruptedException {
         	  
@@ -551,9 +572,9 @@ public class Profile {
 }
        public void Enter_Data(String AddCompanyName1, 
     		                  String CIN_Number1 ,
-    		                  String Country1, 
+    		                  String City1, 
     		                  String State1,
-    		                  String City1,
+    		                  String Country1,
     		                  String Website1,
     		                  String Email1,
     		                  String PhoneNo1,
@@ -577,38 +598,40 @@ public class Profile {
     	   
     	   Country.sendKeys(Keys.CONTROL + "A");
            
-    	   Country.sendKeys(Keys.BACK_SPACE);
+    	   Country.sendKeys(Keys.BACK_SPACE);  
     	   
-    	   Country.sendKeys(Country1);
+    	   City.sendKeys(City1);
+     	   
+    	    City.sendKeys(Keys.ARROW_UP);
+  	      
+    	    City.sendKeys(Keys.TAB);
     	   
-    	   Country.sendKeys(Keys.ARROW_UP);
+    /*	   Country.sendKeys(Keys.ARROW_UP);
  	      
  	      Country.sendKeys(Keys.ENTER);
     	   
  	     State.sendKeys(Keys.CONTROL + "A");
            
    	     State.sendKeys(Keys.BACK_SPACE);
-    	   
+    */	   
     	   State.sendKeys(State1);
     	   
-    	   State.sendKeys(Keys.ARROW_UP);
- 	      
+    	   State.sendKeys(Keys.TAB);
+     /*     
     	   State.sendKeys(Keys.ENTER);
     	   
     	   City.sendKeys(Keys.CONTROL + "A");
          
    	       City.sendKeys(Keys.BACK_SPACE);
-     	   
-    	    City.sendKeys(City1);
-     	   
-    	    City.sendKeys(Keys.ARROW_UP);
-  	      
-    	    City.sendKeys(Keys.ENTER);
+     */	   
+    	   Country.sendKeys(Country1);  
     	   
+    	   State.sendKeys(Keys.TAB);
+    /*	   
     	    Website_link.sendKeys(Keys.CONTROL + "A");
             
     	    Website_link.sendKeys(Keys.BACK_SPACE);
-    	  
+   */  
     	   Website_link.sendKeys(Website1);
     	   
     	   Email_Id.sendKeys(Keys.CONTROL + "A");

@@ -1,27 +1,26 @@
 package pom;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.apache.poi.ss.usermodel.DateUtil;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
-public class Post_A_Job {
+import utils.Closed_Tab;
+
+public class Admin_Post_A_Job {
 	
-public WebDriver driver;
+	public WebDriver driver;
+	public Closed_Tab windowUtil;
+		
+	@FindBy(xpath = "//input[@name='email']")  WebElement  Email_Admin;
+		
+	@FindBy(xpath = "//input[@name='password']")  WebElement  Password_Admin;
 	
-	@FindBy(xpath = "//input[@name='email']")  WebElement  Email;
-	
-	@FindBy(xpath = "//input[@name='password']")  WebElement  Password;
-	
-	@FindBy(xpath = "//button[@type='submit']")	 WebElement  SubmitButton;
+	@FindBy(xpath = "//button[@type='submit']")	 WebElement  SubmitButton_Admin;
 	
 	@FindBy(xpath = "//a[@href='/jobs/postjob']")	 WebElement  Post_a_Job;
 	
@@ -30,6 +29,8 @@ public WebDriver driver;
 //	@FindBy(xpath = "//input[@name='jp_title']") WebElement  Job_Title;
 	
 	@FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div/div/form/div[1]/div[1]/div/div/input") WebElement  Job_Title;
+	
+	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div/form/div[1]/div[1]/div[2]/div/div/input") WebElement  Company;
 	
 	@FindBy(xpath = "//input[@name='jp_start_date']") WebElement  Start_Date;
 
@@ -47,9 +48,9 @@ public WebDriver driver;
 	
 	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div/form/div[1]/div[5]/button") WebElement  Add_Skill;
 	
-	//@FindBy(xpath = "//input[@name='jp_skills']") WebElement  Skills;
+	@FindBy(xpath = "//input[@name='jp_skills']") WebElement  Skills;
 	
-	@FindBy(xpath = "/html/body/div[3]/div[3]/form/div[1]/div/div/input") WebElement  Skills;
+	//@FindBy(xpath = "/html/body/div[3]/div[3]/form/div[1]/div/div/input") WebElement  Skills;
 	
 	@FindBy(xpath = "/html/body/div[3]/div[3]/form/div[2]/button[2]") WebElement  Add_New_Skill;
 	
@@ -69,7 +70,7 @@ public WebDriver driver;
 
 	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div/div/form/div[1]/div[8]/div/div[2]/div[2]/div/div/input") WebElement  City;
 	
-	@FindBy(xpath = "//button[contains(@class, 'MuiButton-outlinedPrimary')]") WebElement  Add_Benifit_Button;
+	@FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div/div/form/div[1]/div[9]/button") WebElement  Add_Benifit_Button;
 	
 	@FindBy(xpath = "//input[@name='jp_benefits']") WebElement  Benifit;
 	
@@ -81,38 +82,33 @@ public WebDriver driver;
 	
 	@FindBy(xpath = "//div[contains(@class, 'ql-editor ql-blank')]") WebElement  Description;
 
-	@FindBy(xpath = "//button[contains(@class, 'MuiButton-contained')]") WebElement  Submit;
-
-
-
-	
+	@FindBy(xpath = "//button[contains(@class, 'MuiButton-contained')]") WebElement  Submit;	
 		
-// Constructor to initialize elements
-public Post_A_Job(WebDriver driver) {
+   // Constructor to initialize elements
+   public Admin_Post_A_Job(WebDriver driver) {
    this.driver = driver;
-  PageFactory.initElements(driver, this);
+   PageFactory.initElements(driver, this);
 	
    }
 
-// Methods to interact with the elements
-public void enterUsername(String username) {
+  // Methods to interact with the elements
+  public void enterUsername(String username) {
    // driver.findElement(Email).sendKeys(username);
-	Email.sendKeys(username);
-}
+	Email_Admin.sendKeys(username);
+  }
 
-public void enterPassword(String password) {
+  public void enterPassword(String password) {
   //  driver.findElement(passwordField).sendKeys(password);
-	Password.sendKeys(password);
-}
+	Password_Admin.sendKeys(password);
+  }
 
-public void clickLogin() {
+   public void clickLogin() {
     //driver.findElement(loginButton).click();
-	SubmitButton.click();
+	SubmitButton_Admin.click();
      }
      
-public void Click_on_Post_a_Job() throws InterruptedException {
-	
-    
+  public void Click_on_Post_a_Job() throws InterruptedException {
+	   
 	Post_a_Job.click();
 	
     }
@@ -138,6 +134,14 @@ public String Check_Page_Name () throws InterruptedException {
     	 Job_Title.isDisplayed();
 	 
 	 return Job_Title.isEnabled();
+	
+}
+     
+     public boolean Check_Company_field() throws InterruptedException {
+    	 
+    	 Company.isDisplayed();
+	 
+	 return Company.isEnabled();
 	
 }
 
@@ -291,12 +295,16 @@ public boolean Check_Submit_button() throws InterruptedException {
 }
 
 public void Click_Submit_button() throws InterruptedException {
+	
+	   //scroll to middle with Javascript Executor
+	   JavascriptExecutor j = (JavascriptExecutor) driver;
+	   j.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", Submit);
 	 
-	Submit.click();	
+       Submit.click();	
 }
 
 public void Enter_Data(String Job_Title_1, 
-		//String Start_Date_1,
+		String Company_1,
        // String End_Date_1, 
         String Min_Experience_1,
         String Max_Experience_1,
@@ -324,36 +332,16 @@ public void Enter_Data(String Job_Title_1,
 	
 	Thread.sleep(3000);
 
-/*	Start_Date.sendKeys(Keys.CONTROL + "A");
+	Company.sendKeys(Company_1);
 
-	Start_Date.sendKeys(Keys.BACK_SPACE);
+	Company.sendKeys(Keys.ARROW_UP);
 	
-	Start_Date.click();
-    
-	Thread.sleep(3000);
+	Company.sendKeys(Keys.ENTER);
 	
-   Start_Date.sendKeys(Start_Date_1);
-   	
-	Date date = DateUtil.getJavaDate(Start_Date_1); 
-	
-	// Format the date to a readable format
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
-    
-    String formattedDate = sdf.format(date);
-    
-   
-	Thread.sleep(3000);
-
-	End_date.sendKeys(Keys.CONTROL + "A");
-
-	End_date.sendKeys(Keys.BACK_SPACE);
-	
-	End_date.click();
+	Company.click();
 	
 	Thread.sleep(3000);
-	
-	End_date.sendKeys(End_Date_1.toString());
-*/	
+		
 	Min_Exp.sendKeys(Min_Experience_1);
 	
 	Max_Exp.sendKeys(Max_Experience_1);
@@ -371,18 +359,15 @@ public void Enter_Data(String Job_Title_1,
 	Highest_Education.sendKeys(Keys.ARROW_UP);
 
 	Highest_Education.sendKeys(Keys.ENTER);
-	
-	
+		
 	Required_degree.sendKeys(Required_Degree_1);
-	
-	
+		
 	Add_Skill.click();
 	
 	Skills.sendKeys(Skills_1);
 	
 	Add_New_Skill.click();
-	
-	
+		
 	Required_Skill.sendKeys(Required_Skill_1);
 	
 	Required_Skill.sendKeys(Keys.ARROW_UP);
@@ -420,7 +405,7 @@ public void Enter_Data(String Job_Title_1,
 
     State.sendKeys(State_1);
     
-    State.sendKeys(Keys.ENTER);
+  //  State.sendKeys(Keys.ENTER);
     
     Thread.sleep(3000);   
     
@@ -441,13 +426,12 @@ public void Enter_Data(String Job_Title_1,
 
    Add_Benifit_Button.click();
    
-   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	
+   Thread.sleep(3000);
+   
    Benifit.sendKeys(Benifit_1);
 	
    Add_New_Benifit_Button.click();
-	
-	
+		
    Job_Benifit.sendKeys(Job_Benifit_1);
 	
    Job_Benifit.sendKeys(Keys.ARROW_UP);
@@ -473,7 +457,124 @@ public void Enter_Data(String Job_Title_1,
 	
 	//Submit.click();
 
-
 }
 
+public void Start_End_Date_1 (String Start_Date_1,String End_Date_1) throws InterruptedException {
+	
+	   Start_Date.sendKeys(Keys.CONTROL + "A");
+
+	   Start_Date.sendKeys(Keys.BACK_SPACE);
+		
+	    Start_Date.click();
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(Start_Date_1);
+	
+		End_date.sendKeys(Keys.CONTROL + "A");
+
+		End_date.sendKeys(Keys.BACK_SPACE);
+		
+		End_date.click(); 
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(End_Date_1);
+							    	
+		}
+public void Start_End_Date_2 (String Start_Date_2,String End_Date_2) throws InterruptedException {
+	
+	   Start_Date.sendKeys(Keys.CONTROL + "A");
+
+	   Start_Date.sendKeys(Keys.BACK_SPACE);
+		
+	    Start_Date.click();
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(Start_Date_2);
+	
+		End_date.sendKeys(Keys.CONTROL + "A");
+
+		End_date.sendKeys(Keys.BACK_SPACE);
+		
+		End_date.click(); 
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(End_Date_2);
+							    	
+		}
+public void Start_End_Date_3 (String Start_Date_3,String End_Date_3) throws InterruptedException {
+	
+	   Start_Date.sendKeys(Keys.CONTROL + "A");
+
+	   Start_Date.sendKeys(Keys.BACK_SPACE);
+		
+	    Start_Date.click();
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(Start_Date_3);
+	
+		End_date.sendKeys(Keys.CONTROL + "A");
+
+		End_date.sendKeys(Keys.BACK_SPACE);
+		
+		End_date.click(); 
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(End_Date_3);
+							    	
+		}
+
+public void Start_End_Date_4 (String Start_Date_4,String End_Date_4) throws InterruptedException {
+	
+	   Start_Date.sendKeys(Keys.CONTROL + "A");
+
+	   Start_Date.sendKeys(Keys.BACK_SPACE);
+		
+	    Start_Date.click();
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(Start_Date_4);
+	
+		End_date.sendKeys(Keys.CONTROL + "A");
+
+		End_date.sendKeys(Keys.BACK_SPACE);
+		
+		End_date.click(); 
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(End_Date_4);
+							    	
+		}
+
+public void Start_End_Date_5 (String Start_Date_5,String End_Date_5) throws InterruptedException {
+	
+	   Start_Date.sendKeys(Keys.CONTROL + "A");
+
+	   Start_Date.sendKeys(Keys.BACK_SPACE);
+		
+	    Start_Date.click();
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(Start_Date_5);
+	
+		End_date.sendKeys(Keys.CONTROL + "A");
+
+		End_date.sendKeys(Keys.BACK_SPACE);
+		
+		End_date.click(); 
+		
+		Thread.sleep(3000);
+		
+		End_date.sendKeys(End_Date_5);
+							    	
+		}
 }
+
