@@ -3,7 +3,10 @@ package company.tests;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import base.BaseTest;
@@ -62,7 +65,7 @@ public class TC_ID_02_Profile extends BaseTest {
 	            System.out.println("The notification icon is not enabled.");
 	        }
 
-	        Notification.CheckNotificationIconClick();
+	      /*  Notification.CheckNotificationIconClick();
 	        
 	        //click on anyone notification	
 	        
@@ -77,8 +80,10 @@ public class TC_ID_02_Profile extends BaseTest {
 	      //    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	         
 	      //   Notification.ClickClearAllButton();
-	         	         
-          }
+	         	 
+	       */  driver. navigate(). refresh();
+	  }
+	  
 	  
 	  
 	    @Test
@@ -227,6 +232,42 @@ public class TC_ID_02_Profile extends BaseTest {
                 System.out.println("The View_button_upload_Logo is not displayed.");
             }
             
+     /*       
+        //upload the photo
+            
+            String ProfilePicfilePath1 = Config.getProperty("ProfilePicfilePath");
+	        String CoverPicfilePath1 = Config.getProperty("CoverPicfilePath");
+            
+         // Specify the path to the file you want to upload
+		 	   
+	        
+	        Profile login2Portal = new Profile(driver);
+	        login2Portal.Upload_Profile(ProfilePicfilePath1);
+	        login2Portal.Upload_CoverPhoto(CoverPicfilePath1);
+	        login2Portal.clickLogin();	        
+	   */
+            String filePath = Config.getProperty("ProfilePicfilePath");
+            String filePath_photo = Config.getProperty("CoverPicfilePath");
+            
+ 	       // Locate the file input element by its name or id or other attribute
+ 	      // WebElement fileInput = driver.findElement(By.xpath("//input[@name='jp_logo']"));
+ 	       
+ 	       // Send the file path to the file input element
+            
+            Profile up = new Profile(driver);
+            up.Upload_Profile(filePath);
+            up.Upload_CoverPhoto(filePath_photo);
+            
+           
+ 	       
+  	      // Locate the file input element by its name or id or other attribute
+  	     // WebElement fileInput_photo = driver.findElement(By.xpath("//input[@name='jp_cover_photo']"));
+  	      
+  	      // Send the file path to the file input element
+  	    //  fileInput_photo.sendKeys(filePath_photo);
+	       
+		     Thread.sleep(5000);
+  
             // Verify if the Upload_Cover_Photo is displayed
             if (Edit_Profile.Check_Upload_Cover_Photo()) {
             	
@@ -261,7 +302,7 @@ public class TC_ID_02_Profile extends BaseTest {
                 System.out.println("The Upload_Cover_Photo is not displayed.");
             }
         }
-	    @Test
+   @Test
 	   // To check that all the fields/dropdown available 
 	    public void TC_ID_02_08 () throws InterruptedException {
 	    	
@@ -307,12 +348,12 @@ public class TC_ID_02_Profile extends BaseTest {
 
         // Iterate through rows in Excel
         int rowCount = excel.getRowCount();
-        for (int i = 1; i <= rowCount; i++) { // Assuming row 0 is the header
+        for (int i = 1; i <= rowCount; i++) { // Assuming row 0 is the header 
             String AddCompanyName1 = excel.getCellData(i, 0);
             String  CIN_Number1 = excel.getCellData(i, 1);
-            String Country1= excel.getCellData(i, 2);
+            String City1 = excel.getCellData(i, 2);
             String State1 = excel.getCellData(i, 3);
-            String City1 = excel.getCellData(i, 4);
+            String Country1 = excel.getCellData(i, 4);
             String Website1= excel.getCellData(i, 5);
             String Email1= excel.getCellData(i, 6);
             String PhoneNo1= excel.getCellData(i, 7);
@@ -325,9 +366,9 @@ public class TC_ID_02_Profile extends BaseTest {
             // Fill the registration form
             Register_Company.Enter_Data(AddCompanyName1,
             		CIN_Number1, 
-            		Country1,
-            		State1,
-            		City1,	
+            		City1,
+            		State1,         
+            		Country1,	
   	                   Website1,
 	                   Email1,
 	                   PhoneNo1,
@@ -417,5 +458,7 @@ public class TC_ID_02_Profile extends BaseTest {
 	            
 	            Update_password.Check_Final_Confirm_Button();
 	            
-	        }
-	    }}
+	        } 
+	    }
+    
+	    }

@@ -2,14 +2,12 @@ package company.tests;
 
 import java.io.IOException;
 import java.time.Duration;
-
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import base.BaseTest;
 import config.Config;
 import pom.Post_A_Job;
-import pom.Profile;
 import utils.ExcelUtilityReg;
 import utils.TestListener;
 
@@ -288,7 +286,7 @@ public class TC_ID_03_Post_A_Job extends BaseTest{
          } else {
              System.out.println("The Location_Type_dropdown is not displayed.");
          }
-         
+        
 		   // Verify if the Check_Country_dropdown is displayed
          if (Fields.Check_Country_dropdown()) {
          	
@@ -498,7 +496,7 @@ public class TC_ID_03_Post_A_Job extends BaseTest{
        
 }
 	
-	 
+ 
 	 
 	 @Test		
 	 // Try to post a job with name "Data Analyst" and check the submit message
@@ -808,7 +806,6 @@ public class TC_ID_03_Post_A_Job extends BaseTest{
            
            break;           
 }
-
 	
 }
 }
