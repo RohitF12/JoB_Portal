@@ -3,11 +3,26 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="company.tests.TC_ID_04_Job_Listing">
         <methods>
           <include name="TC_ID_03_01"/>
         </methods>
       </class> <!-- company.tests.TC_ID_04_Job_Listing -->
+=======
+      <class name="Candidate_TestScripts.TC_ID_06_Update_Profile_while_applying_for_job">
+        <methods>
+          <include name="TC_ID_06_24"/>
+          <include name="TC_ID_06_23"/>
+          <include name="TC_ID_06_18"/>
+          <include name="TC_ID_06_26"/>
+          <include name="TC_ID_06_28"/>
+          <include name="TC_ID_06_25"/>
+          <include name="openbrowser"/>
+          <include name="TC_ID_06_27"/>
+        </methods>
+      </class> <!-- Candidate_TestScripts.TC_ID_06_Update_Profile_while_applying_for_job -->
+>>>>>>> colleague/master
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

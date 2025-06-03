@@ -1,26 +1,54 @@
 # Application URL
 
-app.url=https://test-jobs.reyan.co.in/session/login/company
-registrationUrl=http://test-jobs.reyan.co.in/session/login/company
-app.url.admin=https://test-jobs.reyan.co.in/session/login/admin
+Company_Login=https://test-jobs.reyan.co.in/session/login/company
+Candidate_Login=https://test-jobs.reyan.co.in/session/login/candidate
+Admin_Login=https://test-jobs.reyan.co.in/session/login/admin
 
+Company_Register=https://test-jobs.reyan.co.in/session/signup/company
+Candidate_Register=https://test-jobs.reyan.co.in/session/signup/candidate
 
+#################################################################################################################
 
-configFilePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\Automation_Testing\\Testing\\Company_Portal_JP\\src\\test\\resources\\config\\properties
+#Path
+
+configFilePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\Testing\\RCS_Job_Portal_Automation_E2E_Test\\src\\test\\resources\\config\\properties
 
 chromedriver.path=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\chromedriver.exe
-CandidateLoginUrl=https://test-jobs.reyan.co.in/session/login/candidate
+
+filePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\Testing\\RCS_Job_Portal_Automation_E2E_Test\\src\\test\\resources\\tests\\TestData.xlsx
 
 
+################################################################################################################
 
-filePath=C:\\Users\\RohitFulzele\\Desktop\\RCS\\Automation_Testing\\Testing\\Company_Portal_JP\\src\\test\\resources\\tests\\TestData.xlsx
-sheetName=RegisterCompany
+#SheetName
+
+sheetName_1=RegisterCompany
+sheetName_2=Post_A_Job
+sheetName_3=Edit_Profile_Info
 sheetName_4=Job_Listing
 sheetName_5=Applied_Candidate
 sheetName_6=Admin_Add_Company
 sheetName_7=Admin_Company_List
 sheetName_8=Admin_Post_a_Job
 sheetName_9=Admin_Job_Listing
+sheetName_10=RegisterCompany
+//sheetName_11=Company_Login
+sheetName_12=Candidate_Profile
+sheetName_13=Candidate_change_password
+sheetName_14=Candidate_Profile_deatils
+sheetName_15=Candidate_Register
+sheetName_16=Candidate_Job_Listing_Filter
+sheetName_17=Candidate_Login
+sheetName_18=Forgot_Password
+sheetName_19=Landing_filter
+sheetName_20=HR_Login
+sheetName_21=Add_Candidate
+sheetName_22=Mail
+sheetName_23=Company_Login
+sheetName_24=Password_Update
+
+
+#################################################################################################################
 
 # Browser type
 browser=chrome
@@ -29,20 +57,31 @@ browser=chrome
 implicitWait=10
 explicitWait=15
 
+#################################################################################################################
+
 ProfilePicfilePath=C:\\Users\\RohitFulzele\\Downloads\\bclays.png
 CoverPicfilePath=C:\\Users\\RohitFulzele\\Downloads\\Barc cover photo.png
+
+##################################################################################################################
+
 # Credentials
-username=yocobik731@easipro.com
-password=Password@12
+
+username_Company=yocobik731@easipro.com
+password_Company=Password@12345
 
 username_Candidate=mud-mood@ab4iptpl.mailosaur.net
 password_Candidate=Password@1234
 
-
 username_Admin=hr@reyan.co.in
 password_Admin=Password@1234
 
+###################################################################################################################
+
 PageName="Post a Job"
+
+#####################################################################################################################
+
+#FoundationDate
 
 Foundation_Date_Company_1=12/05/2010
 Foundation_Date_Company_2=15/06/2000
@@ -50,7 +89,7 @@ Foundation_Date_Company_3=12/09/2019
 Foundation_Date_Company_4=20/09/1998
 Foundation_Date_Company_5=15/03/1989
 
-
+#####################################################################################################################
 
 
 #Admin post a job
@@ -65,8 +104,6 @@ Start_Date_4=01/05/2025
 End_Date_4=01/06/2025
 Start_Date_5=10/05/2025
 End_Date_5=10/06/2025
-
-
 End_Date_Update_1=17052025
 
-
+################################################################################################################

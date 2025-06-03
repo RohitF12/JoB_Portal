@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="company.tests.TC_ID_10_Company_Trash_Job">
+      <class name="Company_TestScripts.TC_ID_03_Post_A_Job">
         <methods>
-          <include name="TC_ID_10_06"/>
+          <include name="closeApp"/>
+          <include name="TC_ID_03_01"/>
+          <include name="TC_ID_03_04"/>
+          <include name="TC_ID_03_07"/>
+          <include name="TC_ID_03_05"/>
+          <include name="TC_ID_03_08"/>
+          <include name="TC_ID_03_06"/>
         </methods>
-      </class> <!-- company.tests.TC_ID_10_Company_Trash_Job -->
+      </class> <!-- Company_TestScripts.TC_ID_03_Post_A_Job -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

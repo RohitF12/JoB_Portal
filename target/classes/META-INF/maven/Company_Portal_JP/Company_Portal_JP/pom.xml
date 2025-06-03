@@ -6,23 +6,18 @@
   <name>Company_Portal_JP</name>
   <description>Company_Portal_JP</description>
  <build>
-
     <pluginManagement>
-    
   		<plugins>
-  
   			 <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.2.2</version>
-        </plugin>
-        
+        </plugin>        
 		 	 <plugin>
 		          <groupId>org.apache.maven.plugins</groupId>
 		          <artifactId>maven-compiler-plugin</artifactId>
 		          <version>3.10.1</version>
-		      </plugin>
-		      
+		      </plugin>		      
 		    <plugin>
                 <groupId>org.jibx</groupId>
                 <artifactId>jibx-maven-plugin</artifactId>
@@ -34,19 +29,14 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-
-        
-        
+            </plugin>        
   		</plugins>
   
  	 </pluginManagement>
  </build>
 
-
  <dependencies>
   
-
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
@@ -59,8 +49,6 @@
     <version>5.6.0</version>
 </dependency>
 
-
-
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-scratchpad</artifactId>
@@ -72,6 +60,7 @@
     <artifactId>poi</artifactId>
     <version>5.2.3</version> <!-- Use the latest version -->
 </dependency>
+
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi-ooxml</artifactId>
@@ -84,7 +73,6 @@
     <version>2.23.1</version>
 </dependency>
 
-
 <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
@@ -95,6 +83,12 @@
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
     <version>2.15.1</version>
+</dependency>
+
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>5.1.0</version>  <!-- Latest as of 2025 -->
 </dependency>
 
 <dependency>
@@ -110,15 +104,6 @@
     <version>4.21.0</version>
 </dependency>
 
-
-
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.8.0</version>
-    <scope>test</scope>
-</dependency>
-
 <dependency>
     <groupId>com.aventstack</groupId>
     <artifactId>extentreports</artifactId>
@@ -131,7 +116,13 @@
     <version>5.8.0</version>
 </dependency>
 
-
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.11.0</version>
+    <scope>test</scope>
+</dependency>
 <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
@@ -143,17 +134,13 @@
     <artifactId>log4j-core</artifactId>
     <version>2.23.1</version>
 </dependency>
-<dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-testng</artifactId>
-    <version>2.19.0</version>
-</dependency>
 
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-api</artifactId>
     <version>1.7.5</version>
 </dependency>
+
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-log4j12</artifactId>
@@ -172,12 +159,41 @@
     <version>5.0.9</version>
 </dependency>
 
-  
-  <dependency>
-  	<groupId>JP_Admin_Portal1</groupId>
-  	<artifactId>JP_Admin_Portal1</artifactId>
-  	<version>0.0.1-SNAPSHOT</version>
-  </dependency>
+<dependency>
+    <groupId>io.github.bonigarcia</groupId>
+    <artifactId>webdrivermanager</artifactId>
+    <version>5.9.2</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.mailosaur/mailosaur-java -->
+<dependency>
+    <groupId>com.mailosaur</groupId>
+    <artifactId>mailosaur-java</artifactId>
+    <version>8.3.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.15.3</version> <!-- Use the latest version -->
+</dependency>
+<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>jakarta.mail</artifactId>
+    <version>2.0.1</version>
+</dependency>
+
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.17.2</version> <!-- Or latest -->
+</dependency>
+
+ 	<dependency>
+ 		<groupId>JP_Admin_Portal1</groupId>
+ 		<artifactId>JP_Admin_Portal1</artifactId>
+ 		<version>0.0.1-SNAPSHOT</version>
+ 	</dependency>
  </dependencies>
  
 </project>

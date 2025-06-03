@@ -3,7 +3,19 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="company.tests.TC_ID_10_Company_Trash_Job"/>
+      <class name="Admin_TestScripts.TC_ID_18_Delete_Restore_Candidate"/>
+      <class name="Admin_TestScripts.TC_ID_14_Admin_Company_List"/>
+      <class name="Admin_TestScripts.TC_ID_16_Admin_Job_Listing"/>
+      <class name="Admin_TestScripts.TC_ID_20_Trash"/>
+      <class name="Admin_TestScripts.TC_ID_19_CurrentApplication_ChangeStatus"/>
+      <class name="Admin_TestScripts.TC_ID_18_Admin_Candidate_Listing"/>
+      <class name="Admin_TestScripts.TC_ID_19_Current_Applications"/>
+      <class name="Admin_TestScripts.TC_ID_13_Admin_Add_Company"/>
+      <class name="Admin_TestScripts.TC_ID_12_Admin_Login"/>
+      <class name="Admin_TestScripts.TC_ID_15_Admin_Post_A_Job"/>
+      <class name="Admin_TestScripts.TC_ID_17_Admin_Add_Candidate"/>
+      <class name="Admin_TestScripts.TC_ID_18_Edit_Candidate"/>
+      <class name="Admin_TestScripts.TC_ID_22_Dashboard"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
